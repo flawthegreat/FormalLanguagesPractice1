@@ -61,7 +61,7 @@ bool RegularExpression::acceptsWordWithSuffix(char suffixSymbol, int repeatCount
             if (symbol == static_cast<char>(UnaryOperation::star)) {
                 reInfo.push(operand.maxWordLength > 0 ? REInfo{infinity, infinity} : operand);
             }
-        } else if (isAlphabetSymbol(symbol)) {
+        } else if (isAlphabetSymbol(symbol, _alphabet)) {
             if (symbol == RE::one) {
                 reInfo.push({0, 0});
             } else {
